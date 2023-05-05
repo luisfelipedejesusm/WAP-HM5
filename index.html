@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Homework 4</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/codepen-embed.min.css">
+</head>
+<body>
+
+    <div class="problem">
+        <h2>Problem 1</h2>
+        <p>Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-thenelse construct available in Javascript.</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var max = (a, b) => a > b? a : b;
+        </code></pre>
+        <h2>Problem 2</h2>
+        <p>Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var maxOfThree = (a, b, c) => max(max(a, b), max(a, c));
+        </code></pre>
+        <h2>Problem 3</h2>
+        <p>Write a function isVowel() that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false
+            otherwise</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var isVowel = c => "aeiou".indexOf(c) > -1;
+        </code></pre>
+        <h2>Problem 4</h2>
+        <p>Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an
+            input array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
+            Note/Hint: Do these using Imperative programming approach (i.e. for…loop or while…loop)</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var boringSum = nums => {
+                let total = 0;
+                for(let num of nums) total += num;
+                return total;
+            }
+            var boringMultiply = nums => {
+                let total = 1;
+                for(let num of nums) total *= num;
+                return total;
+            }
+        </code></pre>
+        <h2>Problem 5</h2>
+        <p>Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should
+            return the string "ratset gaj".</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var reverse = str => str.split``.reverse().join``;
+        </code></pre>
+        <h2>Problem 6</h2>
+        <p>Write a function findLongestWord() that takes an array of words and returns the length of the longest one</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var findLongestWord = arr => arr.reduce((a, b) => a.length > b.length? a : b, "");
+        </code></pre>
+        <h2>Problem 7</h2>
+        <p>Write a function filterLongWords() that takes an array of words and an integer i and returns a new array
+            containing only those words that were longer than i characters</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var filterLongWords = (arr, length) => arr.filter(a => a.length > length);
+        </code></pre>
+        <h2>Problem 8</h2>
+        <p>Write a function named, computeSumOfSquares, that takes as input, an array of numbers and calculates and
+            returns the sum of the squares of each number in the input array. E.g. computeSumOfSquares([1,2,3]) should be
+            computed as 12 + 22 +32 = 14. Note: Write your Javascript code without using Imperative programming. i.e. Do
+            NOT use any explicit looping construct; instead use functional programming style/approach</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var computeSumOfSquares = arr => arr.reduce((a, b) => a + b**2, 0);
+        </code></pre>
+        <h2>Problem 9</h2>
+        <p>Write a function named, printOddNumbersOnly, that takes as input, an array of integral numbers and it finds
+            and prints only the numbers which are odd.</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var printOddNumbersOnly = arr => arr.filter(a=>a%2).forEach(el => {
+                console.log(el);
+            });
+        </code></pre>
+        <h2>Problem 10</h2>
+        <p>Write a function named, computeSumOfSquaresOfEvensOnly, that takes as input, an array of integral numbers
+            and calculates and returns the sum of the squares of only the even numbers in the input array. E.g.
+            computeSumOfSquaresOfEvensOnly ([1,2,3,4,5]) should be computed as 22 +42 = 20.</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var computeSumOfSquaresOfEvensOnly = arr => arr.filter(a=>!(a%2)).reduce((a, b) => a + b**2, 0);
+        </code></pre>
+        <h2>Problem 11</h2>
+        <p>Using the Array.reduce(…) function, re-implement your functions, sum(…) and multiply(…) (defined in Problem 4
+            above) without using Imperative programming. i.e. Do NOT use any explicit looping construct; instead use
+            functional programming style/approach.</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var sum = nums => nums.reduce((a, b) => a + b, 0);
+            var multiply = nums => nums.reduce((a, b) => a * b, 1);
+        </code></pre>
+        <h2>Problem 12</h2>
+        <p>Write a function named printFibo, that takes as input, a given length, n, and any two starting numbers a and b,
+            and it prints-out the Fibonacci sequence, e.g. (0, 1, 1, 2, 3, 5, 8, 13, 21, 34,…) of the given length, beginning with
+            a and b. (e.g. printFibo(n=1, a=0, b=1), prints-out: "0", as output; printFibo(n=2, a=0, b=1), prints-out: "0, 1", as
+            output; printFibo(n=3, a=0, b=1), prints-out: "0, 1, 1", as output; printFibo(n=6, a=0, b=1), prints-out: "0, 1, 1, 2,
+            3, 5", as output; and printFibo(n=10, a=0, b=1), prints-out: "0, 1, 1, 2, 3, 5, 8, 13, 21, 34", as output).</p>
+        <pre><code class="javascript">
+            "use strict"; 
+            var printFibo = (n, a, b) => {
+                for(let i = 0; i < n; i++){
+                    let temp = a;
+                    a = b;
+                    b = temp + b
+                    console.log(temp);        
+                }
+            }
+        </code></pre>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" integrity="sha512-rdhY3cbXURo13l/WU9VlaRyaIYeJ/KBakckXIvJNAQde8DgpOmE+eZf7ha4vdqVjTtwQt69bD2wH2LXob/LB7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
